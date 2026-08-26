@@ -121,9 +121,33 @@ header.header-scrolled {
 }
 
 .nav-cta-btn {
-  padding: 0.4rem 1rem;
+  padding: 0.42rem 1.15rem;
   font-size: 0.82rem;
   font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(225, 29, 72, 0.72) 45%, rgba(159, 18, 57, 0.84) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: var(--radius-full);
+  box-shadow: 
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.70),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.25),
+    0 4px 14px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(225, 29, 72, 0.30);
+  transition: all var(--transition-fast);
+}
+
+.nav-cta-btn:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(244, 63, 94, 0.85) 45%, rgba(190, 18, 60, 0.92) 100%);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.25),
+    0 8px 22px rgba(0, 0, 0, 0.5),
+    0 0 18px rgba(225, 29, 72, 0.40);
+  color: #FFFFFF;
 }
 
 /* Mobile Toggle */
