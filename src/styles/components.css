@@ -281,17 +281,17 @@ header.header-scrolled {
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 8vw, 5.85rem);
+  font-size: clamp(4.25rem, 9.5vw, 6.75rem);
   font-weight: 850;
-  line-height: 1.02;
+  line-height: 1.0;
   letter-spacing: -0.04em;
   color: #FFFFFF;
-  background: linear-gradient(180deg, #FFFFFF 15%, #FDA4AF 70%, #F43F5E 100%);
+  background: linear-gradient(180deg, #FFFFFF 40%, #E2E8F0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 50px rgba(225, 29, 72, 0.35);
-  margin-bottom: 1.25rem;
+  text-shadow: 0 4px 35px rgba(0, 0, 0, 0.9);
+  margin-bottom: 1.35rem;
 }
 
 .hero-credentials {
@@ -348,7 +348,7 @@ header.header-scrolled {
 }
 
 .focus-chip svg {
-  color: var(--accent-ruby);
+  color: var(--text-main);
   flex-shrink: 0;
 }
 
@@ -615,9 +615,9 @@ header.header-scrolled {
   font-family: var(--font-mono);
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--accent-ruby);
-  background: rgba(225, 29, 72, 0.15);
-  border: 1px solid rgba(225, 29, 72, 0.3);
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-full);
 }
