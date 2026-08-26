@@ -308,23 +308,15 @@ header.header-scrolled {
   font-weight: 600;
   color: var(--text-body);
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 0.32rem 0.95rem;
   border-radius: var(--radius-full);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-.hero-credential-pill.highlight {
-  color: #FFFFFF;
-  background: rgba(225, 29, 72, 0.16);
-  border-color: rgba(225, 29, 72, 0.35);
-  font-weight: 700;
-  box-shadow: 0 2px 10px rgba(225, 29, 72, 0.18);
-}
-
 .hero-credential-sep {
-  color: var(--accent-ruby);
+  color: var(--text-muted);
   font-size: 1.1rem;
 }
 
