@@ -10,6 +10,11 @@
     gap: 1.5rem;
   }
 
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 1.75rem;
