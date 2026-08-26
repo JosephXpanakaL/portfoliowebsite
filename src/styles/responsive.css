@@ -5,12 +5,9 @@
     grid-template-columns: 1fr;
   }
 
-  .project-item {
-    grid-template-columns: 40px 1fr auto;
-  }
-
-  .project-desc-group {
-    display: none; /* Hide snippet on tablet/mobile list row for clean density */
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .contact-layout {
@@ -86,13 +83,9 @@
     width: 100%;
   }
 
-  .project-item {
-    grid-template-columns: 1fr auto;
-    padding: 1.25rem 0;
-  }
-
-  .project-idx {
-    display: none;
+  .project-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: 18px;
   }
 
   .footer-bottom {

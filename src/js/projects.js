@@ -98,38 +98,57 @@ export function initProjects() {
   function renderProjects() {
     container.innerHTML = '';
 
-    PROJECTS.forEach(project => {
+    PROJECTS.forEach((project, idx) => {
       const item = document.createElement('div');
-      item.className = 'project-item reveal-on-scroll';
+      item.className = `project-card reveal-on-scroll delay-${(idx % 4 + 1) * 100}`;
+      
+      const isLive = project.status.toLowerCase().includes('live') || project.status.toLowerCase().includes('active');
+
       item.innerHTML = `
-        <div class="project-idx">${project.idx}</div>
-        
-        <div class="project-title-group">
-          <h3>${project.title}</h3>
-          <div class="project-cat">${project.subtitle}</div>
+        <div class="card-shimmer-top" aria-hidden="true"></div>
+
+        <div class="project-card-header">
+          <div class="project-pill-meta">
+            <span class="project-idx-badge">${project.idx}</span>
+            <span class="project-cat-name">${project.categoryName}</span>
+          </div>
+
+          <div class="project-status-pill ${isLive ? 'status-pill-live' : 'status-pill-done'}">
+            <span class="status-indicator-dot"></span>
+            <span>${project.status}</span>
+          </div>
         </div>
 
-        <div class="project-desc-group">
-          <p>${project.summary}</p>
-          <div class="project-tech-badges">
+        <div class="project-card-body">
+          <h3 class="project-card-title">${project.title}</h3>
+          <div class="project-card-subtitle">${project.subtitle}</div>
+          
+          <p class="project-card-summary">${project.summary}</p>
+          
+          <div class="project-card-badges">
             ${project.tags.map(t => `<span class="badge-tag">${t}</span>`).join('')}
           </div>
         </div>
 
-        <div class="project-actions">
-          <button class="btn btn-secondary view-details-btn" data-id="${project.id}" style="padding: 0.35rem 0.85rem; font-size: 0.8rem;">
-            Details
+        <div class="project-card-footer">
+          <button class="btn btn-secondary view-details-btn project-btn-details" data-id="${project.id}">
+            <span>Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-arrow"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
-          ${project.githubUrl ? `
-            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon-only" title="View on GitHub" style="width: 32px; height: 32px;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            </a>
-          ` : ''}
-          ${project.demoUrl ? `
-            <a href="${project.demoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="Open Live Demo" style="padding: 0.35rem 0.85rem; font-size: 0.8rem;">
-              Live
-            </a>
-          ` : ''}
+
+          <div class="project-quick-links">
+            ${project.githubUrl ? `
+              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-icon-circle" title="View Source on GitHub" aria-label="View ${project.title} on GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            ` : ''}
+            ${project.demoUrl ? `
+              <a href="${project.demoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-btn-live" title="Open Live Web Application" aria-label="Open Live Application for ${project.title}">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                <span>Live</span>
+              </a>
+            ` : ''}
+          </div>
         </div>
       `;
 
