@@ -12,7 +12,7 @@
 
   .contact-layout {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.75rem;
   }
 }
 
@@ -85,6 +85,12 @@
 
   .project-card {
     padding: 1.35rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1.5rem 1.25rem;
     border-radius: 18px;
   }
 
