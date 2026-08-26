@@ -511,15 +511,40 @@ header.header-scrolled {
 }
 
 .hero-title {
+  position: relative;
+  display: inline-block;
   font-size: clamp(4.25rem, 9.5vw, 6.75rem);
   font-weight: 850;
   line-height: 1.15;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.038em;
   color: #FFFFFF;
-  text-shadow: 0 4px 35px rgba(0, 0, 0, 0.95);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 38%, #E2E8F0 72%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: 
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.40))
+    drop-shadow(0 4px 20px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 12px 45px rgba(225, 29, 72, 0.25));
   margin-bottom: 1.35rem;
   padding-bottom: 0.15em;
   overflow: visible;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.hero-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(244, 63, 94, 0.22), rgba(225, 29, 72, 0.08) 55%, transparent 75%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero-credentials {
