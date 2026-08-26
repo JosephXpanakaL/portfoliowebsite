@@ -283,15 +283,13 @@ header.header-scrolled {
 .hero-title {
   font-size: clamp(4.25rem, 9.5vw, 6.75rem);
   font-weight: 850;
-  line-height: 1.0;
-  letter-spacing: -0.04em;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
   color: #FFFFFF;
-  background: linear-gradient(180deg, #FFFFFF 40%, #E2E8F0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 35px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 4px 35px rgba(0, 0, 0, 0.95);
   margin-bottom: 1.35rem;
+  padding-bottom: 0.15em;
+  overflow: visible;
 }
 
 .hero-credentials {
