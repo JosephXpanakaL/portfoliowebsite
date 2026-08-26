@@ -21,23 +21,23 @@ header.header-scrolled {
   margin: 0 auto;
   width: fit-content;
   max-width: 92%;
-  background: rgba(12, 5, 8, 0.80);
+  background: rgba(12, 5, 8, 0.85);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: var(--radius-full);
   padding: 0.35rem 0.5rem 0.35rem 1rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.10), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  background: rgba(8, 3, 5, 0.94);
-  border-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.85), 0 0 15px rgba(225, 29, 72, 0.18);
+  background: rgba(8, 3, 5, 0.95);
+  border-color: rgba(255, 255, 255, 0.30);
+  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.18), 0 0 18px rgba(225, 29, 72, 0.22), inset 0 1px 0 0 rgba(255, 255, 255, 0.32);
 }
 
 .brand-logo {
@@ -88,8 +88,8 @@ header.header-scrolled {
   align-items: center;
   gap: 0.35rem;
   padding: 0.35rem 0.65rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   border-radius: var(--radius-full);
   color: var(--text-muted);
   font-family: var(--font-mono);
@@ -101,8 +101,8 @@ header.header-scrolled {
 
 .cmd-badge-btn:hover {
   color: var(--text-main);
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.40);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .nav-cta-btn {
@@ -114,13 +114,20 @@ header.header-scrolled {
 /* Mobile Toggle */
 .mobile-nav-toggle {
   display: none;
-  background: transparent;
-  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: var(--radius-full);
   color: var(--text-main);
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.4rem 0.5rem;
   align-items: center;
   justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 /* ==========================================================================
