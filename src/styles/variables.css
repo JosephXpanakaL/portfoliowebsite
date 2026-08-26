@@ -1,13 +1,13 @@
 /* Design Tokens & Theme System — Modern High-Contrast Obsidian Black & Crimson Red */
 :root {
-  /* Color Palette — Pitch Obsidian Black (#030204) & Crimson Glass Surfaces */
-  --bg-dark: #030204;
-  --bg-dark-secondary: #0A0507;
-  --bg-card: rgba(20, 8, 12, 0.65);
-  --bg-card-hover: rgba(36, 12, 18, 0.75);
-  --bg-card-elevated: rgba(20, 8, 12, 0.90);
-  --bg-glass: rgba(5, 3, 5, 0.85);
-  --bg-terminal: #080305;
+  /* Color Palette — Deep Crimson Obsidian (#0A0205) & Rich Ruby Glass Surfaces */
+  --bg-dark: #0A0205;
+  --bg-dark-secondary: #140409;
+  --bg-card: rgba(28, 8, 14, 0.72);
+  --bg-card-hover: rgba(46, 12, 22, 0.82);
+  --bg-card-elevated: rgba(30, 8, 15, 0.92);
+  --bg-glass: rgba(16, 4, 8, 0.88);
+  --bg-terminal: #100306;
 
   /* Primary Accent & Brand Color — Vibrant Crimson & Ruby Red */
   --primary-red: #E11D48;
