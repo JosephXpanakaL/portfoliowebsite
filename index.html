@@ -450,79 +450,93 @@
         </div>
 
         <div class="contact-layout">
-          <!-- Left Column: Contact Channels -->
-          <div class="reveal-on-scroll">
-            <div class="contact-list">
-              <!-- Email Row -->
-              <a href="mailto:blessenpshaju@gmail.com" class="contact-row">
-                <div class="contact-row-left">
-                  <div class="contact-icon-box">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  </div>
-                  <div>
-                    <div class="contact-label">EMAIL</div>
-                    <div class="contact-val">blessenpshaju@gmail.com</div>
-                  </div>
+          <!-- Left Column: Contact Channels & Direct Info Card -->
+          <div class="contact-info-card reveal-on-scroll">
+            <div class="contact-info-header">
+              <div class="contact-status-badge">
+                <span class="status-indicator-dot"></span>
+                <span>AVAILABLE FOR OPPORTUNITIES</span>
+              </div>
+              <h3 class="contact-card-heading">Let's discuss an engineering role or project</h3>
+              <p class="contact-card-desc">
+                Actively seeking entry-level software development, database engineering, data analytics, and cloud infrastructure roles. Feel free to reach out directly.
+              </p>
+            </div>
+
+            <div class="contact-channels-grid">
+              <!-- Email Item -->
+              <a href="mailto:blessenpshaju@gmail.com" class="contact-channel-tile" title="Send Email to Blessen P Shaju">
+                <div class="contact-channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-subtle);"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                <div class="contact-channel-text">
+                  <span class="contact-channel-label">EMAIL ADDRESS</span>
+                  <span class="contact-channel-val">blessenpshaju@gmail.com</span>
+                </div>
+                <svg class="contact-channel-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
               </a>
 
-              <!-- LinkedIn Row -->
-              <a href="https://www.linkedin.com/in/blessen-p-shaju" target="_blank" rel="noopener noreferrer" class="contact-row">
-                <div class="contact-row-left">
-                  <div class="contact-icon-box">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                  </div>
-                  <div>
-                    <div class="contact-label">LINKEDIN</div>
-                    <div class="contact-val">linkedin.com/in/blessen-p-shaju</div>
-                  </div>
+              <!-- LinkedIn Item -->
+              <a href="https://www.linkedin.com/in/blessen-p-shaju" target="_blank" rel="noopener noreferrer" class="contact-channel-tile" title="Connect on LinkedIn">
+                <div class="contact-channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-subtle);"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                <div class="contact-channel-text">
+                  <span class="contact-channel-label">LINKEDIN PROFILE</span>
+                  <span class="contact-channel-val">linkedin.com/in/blessen-p-shaju</span>
+                </div>
+                <svg class="contact-channel-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
 
-              <!-- GitHub Row -->
-              <a href="https://github.com/blessen5" target="_blank" rel="noopener noreferrer" class="contact-row">
-                <div class="contact-row-left">
-                  <div class="contact-icon-box">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  </div>
-                  <div>
-                    <div class="contact-label">GITHUB</div>
-                    <div class="contact-val">github.com/blessen5</div>
-                  </div>
+              <!-- GitHub Item -->
+              <a href="https://github.com/blessen5" target="_blank" rel="noopener noreferrer" class="contact-channel-tile" title="View GitHub Repositories">
+                <div class="contact-channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-subtle);"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                <div class="contact-channel-text">
+                  <span class="contact-channel-label">GITHUB REPOSITORIES</span>
+                  <span class="contact-channel-val">github.com/blessen5</span>
+                </div>
+                <svg class="contact-channel-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
+            </div>
+
+            <div class="contact-info-footer">
+              <div class="contact-location-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Kerala, India • Remote & Relocation Ready</span>
+              </div>
             </div>
           </div>
 
-          <!-- Right Column: Direct Message Form -->
+          <!-- Right Column: Direct Message Form Card -->
           <div class="contact-form-card reveal-on-scroll delay-100">
-            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-main); text-align: center;">
-              Send a Direct Message
-            </h3>
+            <div class="contact-form-header">
+              <div class="contact-form-tag">DIRECT INQUIRY</div>
+              <h3 class="contact-card-heading">Send a Message</h3>
+            </div>
 
             <div id="form-feedback" aria-live="polite" style="display: none; padding: 0.75rem 1rem; margin-bottom: 1.25rem; border-radius: var(--radius-md); font-size: 0.88rem; line-height: 1.5;"></div>
 
             <form id="contact-form">
               <div class="form-group">
-                <label class="form-label" for="contact-name">Your Name</label>
-                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Recruiter / Engineering Manager" required>
+                <label class="form-label" for="contact-name">Your Name <span class="form-required">*</span></label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Hiring Manager / Recruiter" required>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="contact-email">Your Email</label>
+                <label class="form-label" for="contact-email">Your Email <span class="form-required">*</span></label>
                 <input type="email" id="contact-email" class="form-control" placeholder="e.g. recruiter@company.com" required>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="contact-message">Message</label>
-                <textarea id="contact-message" class="form-control" placeholder="Hello Blessen, I'd like to discuss an opportunity..." required></textarea>
+                <label class="form-label" for="contact-message">Message <span class="form-required">*</span></label>
+                <textarea id="contact-message" class="form-control" rows="4" placeholder="Hello Blessen, I'd like to discuss a software engineering opportunity..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                Send Message
+              <button type="submit" class="btn btn-primary contact-submit-btn">
+                <span>Send Message</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </button>
             </form>
           </div>
