@@ -76,7 +76,7 @@
   }
 
   .hero-title {
-    font-size: clamp(2.85rem, 11vw, 3.85rem);
+    font-size: clamp(3.2rem, 12vw, 4.5rem);
   }
 
   .hero-cta {
