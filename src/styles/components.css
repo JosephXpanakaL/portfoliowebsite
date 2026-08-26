@@ -249,6 +249,7 @@ header.header-scrolled {
   color: #FFFFFF;
   background: linear-gradient(180deg, #FFFFFF 15%, #FDA4AF 70%, #F43F5E 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 40px rgba(225, 29, 72, 0.28);
   margin-bottom: 0.95rem;
