@@ -559,26 +559,9 @@ header.header-scrolled {
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(225, 29, 72, 0.40);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 0 20px rgba(225, 29, 72, 0.20), inset 0 1px 0 0 rgba(255, 255, 255, 0.30);
-}
-
-/* Shimmer Top Accent Line */
-.card-shimmer-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(225, 29, 72, 0.8), rgba(251, 113, 133, 0.9), transparent);
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover .card-shimmer-top {
-  opacity: 1;
-  animation: border-shimmer 2.5s linear infinite;
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
 }
 
 /* Card Header */
@@ -615,11 +598,10 @@ header.header-scrolled {
   font-weight: 500;
 }
 
-/* Pulsing Status Pill */
+/* Status Pill */
 .project-status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
@@ -628,29 +610,15 @@ header.header-scrolled {
 }
 
 .status-pill-live {
-  background: rgba(225, 29, 72, 0.15);
-  border: 1px solid rgba(225, 29, 72, 0.35);
-  color: #FFE4E6;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-main);
 }
 
 .status-pill-done {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   color: var(--text-muted);
-}
-
-.status-indicator-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--primary-red);
-  display: inline-block;
-  animation: status-pulse 2s infinite;
-}
-
-.status-pill-done .status-indicator-dot {
-  background: #94A3B8;
-  animation: none;
 }
 
 /* Card Body */
@@ -671,7 +639,6 @@ header.header-scrolled {
 
 .project-card:hover .project-card-title {
   color: #FFFFFF;
-  text-shadow: 0 0 16px rgba(225, 29, 72, 0.4);
 }
 
 .project-card-subtitle {

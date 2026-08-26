@@ -105,8 +105,6 @@ export function initProjects() {
       const isLive = project.status.toLowerCase().includes('live') || project.status.toLowerCase().includes('active');
 
       item.innerHTML = `
-        <div class="card-shimmer-top" aria-hidden="true"></div>
-
         <div class="project-card-header">
           <div class="project-pill-meta">
             <span class="project-idx-badge">${project.idx}</span>
@@ -114,7 +112,6 @@ export function initProjects() {
           </div>
 
           <div class="project-status-pill ${isLive ? 'status-pill-live' : 'status-pill-done'}">
-            <span class="status-indicator-dot"></span>
             <span>${project.status}</span>
           </div>
         </div>
