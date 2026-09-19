@@ -15,6 +15,8 @@
   <div class="intro-loader" aria-hidden="true"><div class="intro-name"><span>B</span><span>L</span><span>E</span><span>S</span><span>S</span><span>E</span><span>N</span></div><p>Software · Data · Systems</p></div>
   <div class="site-background" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
+  <div class="transition-veil" aria-hidden="true"></div>
+  <audio id="portfolio-bgm" src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/portfolio-bgm.mp3" loop preload="metadata"></audio>
   <a class="skip-link" href="#home">Skip to content</a>
 
   <header class="site-header">
@@ -26,13 +28,13 @@
   </header>
 
   <nav class="side-rail" aria-label="Section navigation">
-    <a class="active" href="#home" data-panel="home"><i></i><span>Home</span><figure class="nav-preview"><img src="/assets/blessen-portrait.webp" alt=""><figcaption>Introduction</figcaption></figure></a>
-    <a href="#profile" data-panel="profile"><i></i><span>Profile</span><figure class="nav-preview"><img src="/assets/blessen-speaking.webp" alt=""><figcaption>Story & focus</figcaption></figure></a>
-    <a href="#skills" data-panel="skills"><i></i><span>Skills</span><figure class="nav-preview"><img src="/assets/hero-architecture.webp" alt=""><figcaption>Technical toolkit</figcaption></figure></a>
-    <a href="#work" data-panel="work"><i></i><span>Work</span><figure class="nav-preview"><img src="/assets/rigmaster-cover.webp" alt=""><figcaption>Selected projects</figcaption></figure></a>
-    <a href="#education" data-panel="education"><i></i><span>Education</span><figure class="nav-preview"><img src="/assets/blessen-award.webp" alt=""><figcaption>Academic journey</figcaption></figure></a>
-    <a href="#credentials" data-panel="credentials"><i></i><span>Certificates</span><figure class="nav-preview"><img src="/assets/data-pipeline-cover.webp" alt=""><figcaption>Verified learning</figcaption></figure></a>
-    <a href="#contact" data-panel="contact"><i></i><span>Contact</span><figure class="nav-preview"><img src="/assets/professional-abstract-bg.webp" alt=""><figcaption>Start a conversation</figcaption></figure></a>
+    <a class="active" href="#home" data-panel="home"><i></i><span>Home</span><figure class="nav-preview"><img src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/nav-home.webp" alt=""><figcaption>Introduction</figcaption></figure></a>
+    <a href="#profile" data-panel="profile"><i></i><span>Profile</span><figure class="nav-preview"><img src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/nav-profile.webp" alt=""><figcaption>Story & focus</figcaption></figure></a>
+    <a href="#skills" data-panel="skills"><i></i><span>Skills</span><figure class="nav-preview"><img src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/nav-skills.webp" alt=""><figcaption>Technical toolkit</figcaption></figure></a>
+    <a href="#work" data-panel="work"><i></i><span>Work</span><figure class="nav-preview"><img src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/nav-work.webp" alt=""><figcaption>Selected projects</figcaption></figure></a>
+    <a href="#education" data-panel="education"><i></i><span>Education</span><figure class="nav-preview"><img src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/nav-education.webp" alt=""><figcaption>Academic journey</figcaption></figure></a>
+    <a href="#credentials" data-panel="credentials"><i></i><span>Certificates</span><figure class="nav-preview"><img src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/nav-certificates.webp" alt=""><figcaption>Verified learning</figcaption></figure></a>
+    <a href="#contact" data-panel="contact"><i></i><span>Contact</span><figure class="nav-preview"><img src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/nav-contact.webp" alt=""><figcaption>Start a conversation</figcaption></figure></a>
   </nav>
 
   <aside id="menu-overlay" class="menu-overlay" aria-hidden="true">
@@ -56,9 +58,10 @@
           <p class="hero-intro reveal">Software engineering, data analytics and cloud-ready applications designed to make complexity useful.</p>
           <a class="round-link reveal" href="#work" data-panel="work">Explore <b>↘</b></a>
         </div>
-        <figure class="photo-card hero-photo reveal">
-          <img src="/assets/blessen-portrait.webp" alt="Blessen P Shaju in a dark suit, smiling">
-          <figcaption><span>Portrait / 2026</span><span>Kerala, India</span></figcaption>
+        <figure class="hero-portrait-stage reveal" aria-label="Portrait of Blessen P Shaju">
+          <div class="portrait-halo" aria-hidden="true"></div>
+          <img class="hero-cutout" src="https://blessen-cinematic-portfolio.jxp400900.chatgpt.site/assets/blessen-hero-cutout.png" alt="Blessen P Shaju in a dark suit, smiling">
+          <figcaption><span>Software · Data · Cloud</span><span>Kerala, India</span></figcaption>
         </figure>
       </div>
     </section>
@@ -82,6 +85,22 @@
       </div>
     </section>
 
+    <section class="panel expertise" id="skills" aria-labelledby="skills-title">
+      <div class="panel-inner expertise-grid">
+        <div class="skills">
+          <p class="eyebrow reveal">Technical practice</p>
+          <h2 class="outline-title reveal" id="skills-title">Across the stack.</h2>
+          <p class="lede reveal">A practical toolkit spanning software engineering, relational data, analytics and reproducible deployment.</p>
+        </div>
+        <div class="skill-list reveal">
+          <article><h3>Software systems</h3><p>Java · C · C++ · PHP · JavaScript · HTML5 · CSS3</p></article>
+          <article><h3>Data & databases</h3><p>Python · Pandas · PostgreSQL · MySQL · Oracle SQL · ETL</p></article>
+          <article><h3>Cloud foundations</h3><p>Linux · Docker · Bash · Git · GitHub · deployment</p></article>
+          <article><h3>Engineering foundations</h3><p>Data structures · Algorithms · DBMS · Networks · Operating systems · REST APIs</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="panel work" id="work" aria-labelledby="work-title">
       <div class="panel-inner">
         <header class="section-head"><div><p class="eyebrow reveal">Selected work</p><h2 class="outline-title reveal" id="work-title">Built with intent.</h2></div><p class="swipe-note">Swipe projects →</p></header>
@@ -102,22 +121,6 @@
             <div class="project-media agro-art"><span>FIELD / VISION / AI</span></div>
             <div class="project-info"><p>AI + IoT</p><h3>AgroPrescribe</h3><span>Crop diagnosis and precision pesticide mapping.</span><b>TypeScript · AI · ESP32 ↗</b></div>
           </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel expertise" id="skills" aria-labelledby="skills-title">
-      <div class="panel-inner expertise-grid">
-        <div class="skills">
-          <p class="eyebrow reveal">Technical practice</p>
-          <h2 class="outline-title reveal" id="skills-title">Across the stack.</h2>
-          <p class="lede reveal">A practical toolkit spanning software engineering, relational data, analytics and reproducible deployment.</p>
-        </div>
-        <div class="skill-list reveal">
-          <article><h3>Software systems</h3><p>Java · C · C++ · PHP · JavaScript · HTML5 · CSS3</p></article>
-          <article><h3>Data & databases</h3><p>Python · Pandas · PostgreSQL · MySQL · Oracle SQL · ETL</p></article>
-          <article><h3>Cloud foundations</h3><p>Linux · Docker · Bash · Git · GitHub · deployment</p></article>
-          <article><h3>Engineering foundations</h3><p>Data structures · Algorithms · DBMS · Networks · Operating systems · REST APIs</p></article>
         </div>
       </div>
     </section>
@@ -171,8 +174,8 @@
   <button class="chat-launch" type="button" aria-expanded="false" aria-controls="chat-panel"><span></span><b>Ask B.</b><i>+</i></button>
   <section id="chat-panel" class="chat-panel" aria-label="Portfolio assistant" aria-hidden="true">
     <header><div><i></i><p>Portfolio assistant<small>Local · no account needed</small></p></div><button type="button" aria-label="Close chat">×</button></header>
-    <div class="chat-log" aria-live="polite"><div class="message bot">Hi — ask me about Blessen’s projects, skills, education or availability.</div></div>
-    <div class="chat-suggestions"><button>Best project?</button><button>Core skills?</button><button>Contact</button></div>
+    <div class="chat-log" aria-live="polite"><div class="message bot">Hi — I can answer questions about Blessen’s profile, studies, projects, skills, certificates, interests and availability.</div></div>
+    <div class="chat-suggestions"><button>Who is Blessen?</button><button>Best projects?</button><button>Education</button></div>
     <form class="chat-form"><label class="sr-only" for="chat-input">Ask about Blessen</label><input id="chat-input" autocomplete="off" placeholder="Ask about Blessen…"><button aria-label="Send">↗</button></form>
   </section>
   <script src="/assets/script.js" defer></script>
