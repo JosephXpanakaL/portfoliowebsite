@@ -138,7 +138,8 @@
   const answers = [
     { keys: ['best','project','work','built'], text: 'Start with RigMasterAI for product thinking, LARS for full-stack fundamentals, and AgroPrescribe for collaborative AI + IoT work.' },
     { keys: ['skill','stack','technology','language'], text: 'Blessen works with Python, Java, C/C++, PHP and JavaScript; PostgreSQL, MySQL and Oracle; plus Linux, Docker, Bash and Git.' },
-    { keys: ['education','study','college','degree'], text: 'He is pursuing an MSc in Computer Science at Rajagiri College of Social Sciences after completing a BSc in Computer Science.' },
+    { keys: ['education','study','college','degree'], text: 'He is pursuing an MSc in Computer Science at Rajagiri College of Social Sciences after completing a BSc in Computer Science at SSV College under Mahatma Gandhi University.' },
+    { keys: ['certificate','credential','course','achievement'], text: 'His credentials include AI Essentials, SQL and Relational Databases 101 from Cognitive Class / IBM, Generative AI for Project Managers from PMI, and Word Processing and Data Entry from KELTRON.' },
     { keys: ['contact','email','hire','available'], text: 'Blessen is open to software, data and cloud opportunities. Use the direct-message form or email blessenpshaju@gmail.com.' }
   ];
   const addMessage = (text, type) => {
