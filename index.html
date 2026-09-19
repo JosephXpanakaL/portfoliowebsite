@@ -29,8 +29,10 @@
   <nav class="side-rail" aria-label="Section navigation">
     <a class="active" href="#home" data-panel="home"><i></i><span>Home</span></a>
     <a href="#profile" data-panel="profile"><i></i><span>Profile</span></a>
+    <a href="#skills" data-panel="skills"><i></i><span>Skills</span></a>
     <a href="#work" data-panel="work"><i></i><span>Work</span></a>
-    <a href="#expertise" data-panel="expertise"><i></i><span>Expertise</span></a>
+    <a href="#education" data-panel="education"><i></i><span>Education</span></a>
+    <a href="#credentials" data-panel="credentials"><i></i><span>Certificates</span></a>
     <a href="#contact" data-panel="contact"><i></i><span>Contact</span></a>
   </nav>
 
@@ -38,7 +40,8 @@
     <p class="menu-label">Navigate</p>
     <nav>
       <a href="#home" data-panel="home">Home</a><a href="#profile" data-panel="profile">Profile</a>
-      <a href="#work" data-panel="work">Selected work</a><a href="#expertise" data-panel="expertise">Expertise</a>
+      <a href="#skills" data-panel="skills">Skills</a><a href="#work" data-panel="work">Selected work</a>
+      <a href="#education" data-panel="education">Education</a><a href="#credentials" data-panel="credentials">Certificates</a>
       <a href="#contact" data-panel="contact">Contact</a>
     </nav>
     <div class="menu-foot"><a href="https://github.com/blessen5" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/blessen-p-shaju" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
@@ -104,22 +107,45 @@
       </div>
     </section>
 
-    <section class="panel expertise" id="expertise" aria-labelledby="expertise-title">
+    <section class="panel expertise" id="skills" aria-labelledby="skills-title">
       <div class="panel-inner expertise-grid">
         <div class="skills">
-          <p class="eyebrow reveal">Expertise</p>
-          <h2 class="outline-title reveal" id="expertise-title">Across the stack.</h2>
-          <div class="skill-list reveal">
-            <article><h3>Software systems</h3><p>Java · C · C++ · PHP · JavaScript</p></article>
-            <article><h3>Data & databases</h3><p>Python · Pandas · PostgreSQL · MySQL · Oracle</p></article>
-            <article><h3>Cloud foundations</h3><p>Linux · Docker · Bash · Git · deployment</p></article>
-          </div>
+          <p class="eyebrow reveal">Technical practice</p>
+          <h2 class="outline-title reveal" id="skills-title">Across the stack.</h2>
+          <p class="lede reveal">A practical toolkit spanning software engineering, relational data, analytics and reproducible deployment.</p>
         </div>
-        <div class="education reveal">
-          <p class="eyebrow">Education</p>
-          <article><span>Current</span><h3>MSc Computer Science</h3><p>Rajagiri College of Social Sciences</p></article>
-          <article><span>Graduate</span><h3>BSc Computer Science</h3><p>SSV College · Mahatma Gandhi University</p></article>
-          <figure class="award-thumb"><img src="/assets/blessen-award.webp" alt="Blessen receiving a certificate" loading="lazy"><figcaption>Learning in public · Growing through practice</figcaption></figure>
+        <div class="skill-list reveal">
+          <article><h3>Software systems</h3><p>Java · C · C++ · PHP · JavaScript · HTML5 · CSS3</p></article>
+          <article><h3>Data & databases</h3><p>Python · Pandas · PostgreSQL · MySQL · Oracle SQL · ETL</p></article>
+          <article><h3>Cloud foundations</h3><p>Linux · Docker · Bash · Git · GitHub · deployment</p></article>
+          <article><h3>Engineering foundations</h3><p>Data structures · Algorithms · DBMS · Networks · Operating systems · REST APIs</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel education-panel" id="education" aria-labelledby="education-title">
+      <div class="panel-inner education-grid">
+        <div>
+          <p class="eyebrow reveal">Academic journey</p>
+          <h2 class="outline-title reveal" id="education-title">Learning with depth.</h2>
+          <p class="lede reveal">Computer science foundations strengthened through postgraduate study, practical systems work and public presentation.</p>
+        </div>
+        <div class="timeline reveal">
+          <article><span>Currently pursuing · Postgraduate degree</span><h3>MSc Computer Science</h3><h4>Rajagiri College of Social Sciences, Kerala</h4><p>Software systems, algorithmic problem solving, database management, cloud infrastructure and data analytics.</p></article>
+          <article><span>Graduate · Undergraduate degree</span><h3>BSc Computer Science</h3><h4>SSV College, Valayanchirangara · Mahatma Gandhi University</h4><p>Programming foundations, relational database design, computer networks and operating systems.</p></article>
+        </div>
+        <figure class="achievement-photo reveal"><img src="/assets/blessen-award.webp" alt="Blessen receiving a certificate on stage" loading="lazy"><figcaption><b>Achievement in action</b><span>Presenting ideas, learning in public and building professional confidence.</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="panel credentials-panel" id="credentials" aria-labelledby="credentials-title">
+      <div class="panel-inner">
+        <header class="section-head"><div><p class="eyebrow reveal">Verified learning</p><h2 class="outline-title reveal" id="credentials-title">Credentials.</h2></div><p class="credential-intro reveal">Artificial intelligence, relational databases, project delivery and data processing.</p></header>
+        <div class="credential-grid">
+          <article class="credential-card reveal"><p>Coursera · Online certification</p><h3>AI Essentials</h3><span>Generative AI · Prompt engineering · AI ethics · Productivity</span><b>Verified credential</b></article>
+          <article class="credential-card reveal"><p>Cognitive Class / IBM · Aug 2024</p><h3>SQL and Relational Databases 101</h3><span>Relational schema · SQL queries · Table joins · Normalization</span><b>Verified credential</b></article>
+          <article class="credential-card reveal"><p>Project Management Institute</p><h3>Generative AI Overview for Project Managers</h3><span>Project lifecycle · GenAI workflows · Risk analysis · Strategy</span><b>Completed</b></article>
+          <article class="credential-card reveal"><p>KELTRON · Technical qualification</p><h3>Word Processing and Data Entry</h3><span>Data processing · Office automation · Documentation · Validation</span><b>Verified credential</b></article>
         </div>
       </div>
     </section>
