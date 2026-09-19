@@ -64,26 +64,6 @@
     menuButton.setAttribute('aria-expanded', String(open));
   });
 
-  if (matchMedia('(pointer:fine)').matches && !reduced) {
-    const dot = $('.cursor-dot');
-    const ring = $('.cursor-ring');
-    let x = innerWidth / 2, y = innerHeight / 2, rx = x, ry = y;
-    addEventListener('mousemove', e => {
-      x = e.clientX; y = e.clientY;
-      dot.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`;
-    });
-    const animateCursor = () => {
-      rx += (x - rx) * .18; ry += (y - ry) * .18;
-      ring.style.transform = `translate3d(${rx}px,${ry}px,0) translate(-50%,-50%)`;
-      requestAnimationFrame(animateCursor);
-    };
-    animateCursor();
-    $$('a,button,input,textarea').forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('active'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('active'));
-    });
-  }
-
   let audioContext, gain, oscillators = [];
   const sound = $('.sound-toggle');
   const stopAudio = () => {
