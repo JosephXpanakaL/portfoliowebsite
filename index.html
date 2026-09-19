@@ -2,236 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a09">
-  <meta name="description" content="Blessen P Shaju — computer science postgraduate building useful software, intelligent systems and data products.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090a0b">
+  <meta name="description" content="Blessen P Shaju — software, data and cloud systems portfolio.">
   <title>Blessen P Shaju — Software, Data & Systems</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a09'/%3E%3Cpath d='M17 14h18c9 0 14 4 14 11 0 5-3 8-7 9 6 1 9 5 9 11 0 9-6 13-16 13H17V14Zm10 8v9h7c4 0 6-1 6-5 0-3-2-4-6-4h-7Zm0 17v11h8c5 0 7-2 7-6s-2-5-7-5h-8Z' fill='%23f0eee7'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
+  <div class="intro-loader" aria-hidden="true"><div class="intro-name"><span>B</span><span>L</span><span>E</span><span>S</span><span>S</span><span>E</span><span>N</span></div><p>Software · Data · Systems</p></div>
+  <div class="site-background" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"><span>OPEN</span></div>
+  <a class="skip-link" href="#home">Skip to content</a>
 
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" aria-label="Primary navigation">
-    <a class="wordmark magnetic" href="#hero" aria-label="Blessen P Shaju, home">BPS<span>©26</span></a>
-    <p class="header-role">Software / Data / Systems</p>
+  <header class="site-header">
+    <a class="wordmark" href="#home" data-panel="home">Blessen</a>
     <div class="header-actions">
-      <button class="sound-toggle magnetic" type="button" aria-pressed="false" aria-label="Play ambient background sound">
-        <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="sound-label">Sound off</span>
-      </button>
-      <button class="menu-button magnetic" type="button" aria-expanded="false" aria-controls="menu-overlay">
-        <span>Menu</span><i></i><i></i>
-      </button>
+      <button class="sound-toggle" type="button" aria-pressed="false"><span class="sound-bars"><i></i><i></i><i></i></span><span class="sound-label">Sound off</span></button>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu-overlay"><span>Menu</span><i></i><i></i></button>
     </div>
   </header>
 
+  <nav class="side-rail" aria-label="Section navigation">
+    <a class="active" href="#home" data-panel="home"><i></i><span>Home</span><figure class="nav-preview"><img src="/assets/blessen-portrait.webp" alt=""><figcaption>Introduction</figcaption></figure></a>
+    <a href="#profile" data-panel="profile"><i></i><span>Profile</span><figure class="nav-preview"><img src="/assets/blessen-speaking.webp" alt=""><figcaption>Story & focus</figcaption></figure></a>
+    <a href="#skills" data-panel="skills"><i></i><span>Skills</span><figure class="nav-preview"><img src="/assets/hero-architecture.webp" alt=""><figcaption>Technical toolkit</figcaption></figure></a>
+    <a href="#work" data-panel="work"><i></i><span>Work</span><figure class="nav-preview"><img src="/assets/rigmaster-cover.webp" alt=""><figcaption>Selected projects</figcaption></figure></a>
+    <a href="#education" data-panel="education"><i></i><span>Education</span><figure class="nav-preview"><img src="/assets/blessen-award.webp" alt=""><figcaption>Academic journey</figcaption></figure></a>
+    <a href="#credentials" data-panel="credentials"><i></i><span>Certificates</span><figure class="nav-preview"><img src="/assets/data-pipeline-cover.webp" alt=""><figcaption>Verified learning</figcaption></figure></a>
+    <a href="#contact" data-panel="contact"><i></i><span>Contact</span><figure class="nav-preview"><img src="/assets/professional-abstract-bg.webp" alt=""><figcaption>Start a conversation</figcaption></figure></a>
+  </nav>
+
   <aside id="menu-overlay" class="menu-overlay" aria-hidden="true">
-    <div class="menu-meta"><span>Navigate</span><span>Kerala, India</span></div>
-    <nav aria-label="Overlay navigation">
-      <a href="#about"><small>01</small><span>Profile</span></a>
-      <a href="#work"><small>02</small><span>Selected work</span></a>
-      <a href="#practice"><small>03</small><span>Practice</span></a>
-      <a href="#contact"><small>04</small><span>Contact</span></a>
+    <p class="menu-label">Navigate</p>
+    <nav>
+      <a href="#home" data-panel="home">Home</a><a href="#profile" data-panel="profile">Profile</a>
+      <a href="#skills" data-panel="skills">Skills</a><a href="#work" data-panel="work">Selected work</a>
+      <a href="#education" data-panel="education">Education</a><a href="#credentials" data-panel="credentials">Certificates</a>
+      <a href="#contact" data-panel="contact">Contact</a>
     </nav>
-    <div class="menu-foot">
-      <a href="https://github.com/blessen5" target="_blank" rel="noreferrer">GitHub ↗</a>
-      <a href="https://www.linkedin.com/in/blessen-p-shaju" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-    </div>
+    <div class="menu-foot"><a href="https://github.com/blessen5" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/blessen-p-shaju" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
   </aside>
 
-  <main id="main">
-    <section id="hero" class="hero">
-      <div class="hero-image parallax-layer" data-speed="0.12" aria-hidden="true"></div>
-      <div class="hero-shade" aria-hidden="true"></div>
-      <figure class="hero-portrait reveal" aria-label="Portrait of Blessen P Shaju">
-        <img src="assets/blessen-portrait.webp" alt="Blessen P Shaju in a dark suit, smiling">
-        <figcaption><span>Portrait / 2026</span><span>Kerala, India</span></figcaption>
-      </figure>
-      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="eyebrow reveal">Computer science postgraduate / Kerala</p>
-        <h1 class="hero-title" aria-label="Blessen builds systems that make complexity useful">
-          <span class="line"><em>Blessen builds</em></span>
-          <span class="line outline"><em>useful systems.</em></span>
-        </h1>
-        <div class="hero-bottom reveal">
-          <p>Software engineering, data analytics<br>and cloud-ready applications.</p>
-          <a class="round-link magnetic" href="#work" aria-label="Explore selected work"><span>Explore</span><b>↘</b></a>
+  <main class="panel-deck" id="main">
+    <section class="panel hero" id="home" aria-labelledby="home-title">
+      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+      <div class="panel-inner hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Computer science postgraduate · Kerala</p>
+          <h1 id="home-title"><span>Blessen</span><em>builds useful systems.</em></h1>
+          <p class="hero-intro reveal">Software engineering, data analytics and cloud-ready applications designed to make complexity useful.</p>
+          <a class="round-link reveal" href="#work" data-panel="work">Explore <b>↘</b></a>
         </div>
+        <figure class="photo-card hero-photo reveal">
+          <img src="/assets/blessen-portrait.webp" alt="Blessen P Shaju in a dark suit, smiling">
+          <figcaption><span>Portrait / 2026</span><span>Kerala, India</span></figcaption>
+        </figure>
       </div>
-      <div class="hero-coordinates">
-        <span>09.9312° N</span><span>76.2673° E</span>
-      </div>
-      <div class="scroll-cue"><span></span><p>Scroll to explore</p></div>
     </section>
 
-    <section id="about" class="manifesto section-pad">
-      <div class="section-index reveal"><span>01</span><span>Profile</span></div>
-      <div class="manifesto-copy">
-        <p class="kicker reveal">One foot in engineering.<br>One in analysis.</p>
-        <h2 class="split-text">I turn difficult technical problems into clear, reliable experiences.</h2>
-        <div class="profile-grid reveal">
-          <p>BSc Computer Science graduate from Mahatma Gandhi University, now pursuing an MSc in Computer Science at Rajagiri College of Social Sciences.</p>
-          <p>My practice moves from data structures and database design to Python pipelines, Linux environments, containers and full-stack products.</p>
-          <div class="availability"><i></i><span>Open to early-career roles<br>and ambitious collaborations</span></div>
-        </div>
-        <div class="human-proof">
-          <figure class="editorial-frame speaking-frame reveal">
-            <img src="assets/blessen-speaking.webp" alt="Blessen presenting on stage with a microphone" loading="lazy">
-            <figcaption><span>Communication</span><span>Ideas made clear</span></figcaption>
-          </figure>
-          <div class="build-note reveal">
-            <p class="mono-label">Personal principle</p>
-            <blockquote>Build to perform.</blockquote>
-            <p>Keep improving, learn deliberately, put knowledge into action, and give every task the care it deserves.</p>
+    <section class="panel profile" id="profile" aria-labelledby="profile-title">
+      <div class="panel-inner profile-grid">
+        <div class="section-copy">
+          <p class="eyebrow reveal">Profile</p>
+          <h2 class="outline-title reveal" id="profile-title">Clear thinking.<br>Useful outcomes.</h2>
+          <p class="lede reveal">I turn difficult technical problems into reliable, understandable experiences.</p>
+          <div class="profile-notes reveal">
+            <p>BSc Computer Science graduate from Mahatma Gandhi University, now pursuing an MSc at Rajagiri College of Social Sciences.</p>
+            <p>My work spans database design, Python pipelines, Linux environments, containers and full-stack products.</p>
           </div>
-          <figure class="editorial-frame award-frame reveal">
-            <img src="assets/blessen-award.webp" alt="Blessen receiving a certificate on stage" loading="lazy">
-            <figcaption><span>Growth</span><span>Learning in public</span></figcaption>
-          </figure>
+          <div class="availability reveal"><i></i><span>Open to early-career roles and ambitious collaborations</span></div>
+        </div>
+        <figure class="photo-card profile-photo reveal">
+          <img src="/assets/blessen-speaking.webp" alt="Blessen presenting on stage with a microphone" loading="lazy">
+          <figcaption><span>Communication</span><span>Ideas made clear</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="panel work" id="work" aria-labelledby="work-title">
+      <div class="panel-inner">
+        <header class="section-head"><div><p class="eyebrow reveal">Selected work</p><h2 class="outline-title reveal" id="work-title">Built with intent.</h2></div><p class="swipe-note">Swipe projects →</p></header>
+        <div class="project-grid">
+          <a class="project reveal" href="https://rigmaster-ai.vercel.app/" target="_blank" rel="noreferrer">
+            <div class="project-media"><img src="/assets/rigmaster-cover.webp" alt="Premium computer components" loading="lazy"></div>
+            <div class="project-info"><p>AI product · Live</p><h3>RigMasterAI</h3><span>Intelligent PC configuration with compatibility reasoning.</span><b>AI APIs · JavaScript · Vercel ↗</b></div>
+          </a>
+          <a class="project project-graphic reveal" href="https://github.com/blessen5/LARS" target="_blank" rel="noreferrer">
+            <div class="project-media lars-art"><span>L / A / R / S</span></div>
+            <div class="project-info"><p>Full-stack system</p><h3>LARS</h3><span>Role-based lab submissions, attendance and reporting.</span><b>PHP · MySQL · RBAC ↗</b></div>
+          </a>
+          <a class="project reveal" href="https://github.com/blessen5/job-analysis" target="_blank" rel="noreferrer">
+            <div class="project-media"><img src="/assets/data-pipeline-cover.webp" alt="Abstract data pipeline architecture" loading="lazy"></div>
+            <div class="project-info"><p>Data engineering</p><h3>Signal Pipeline</h3><span>Cleaning, transforming and explaining complex datasets.</span><b>Python · SQL · Pandas ↗</b></div>
+          </a>
+          <a class="project project-graphic reveal" href="https://github.com/blessen5/aipesticide" target="_blank" rel="noreferrer">
+            <div class="project-media agro-art"><span>FIELD / VISION / AI</span></div>
+            <div class="project-info"><p>AI + IoT</p><h3>AgroPrescribe</h3><span>Crop diagnosis and precision pesticide mapping.</span><b>TypeScript · AI · ESP32 ↗</b></div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="work" class="work-section" aria-labelledby="work-title">
-      <div class="work-sticky">
-        <div class="work-head">
-          <div class="section-index light"><span>02</span><span>Selected work</span></div>
-          <h2 id="work-title">Projects with<br><em>real intent.</em></h2>
-          <p class="drag-note">Scroll / drag through work →</p>
+    <section class="panel expertise" id="skills" aria-labelledby="skills-title">
+      <div class="panel-inner expertise-grid">
+        <div class="skills">
+          <p class="eyebrow reveal">Technical practice</p>
+          <h2 class="outline-title reveal" id="skills-title">Across the stack.</h2>
+          <p class="lede reveal">A practical toolkit spanning software engineering, relational data, analytics and reproducible deployment.</p>
         </div>
-        <div class="project-track" role="list">
-          <article class="project-card project-image tilt-card" role="listitem" data-cursor="OPEN">
-            <img src="assets/rigmaster-cover.webp" alt="Dark studio composition of premium computer components" loading="lazy">
-            <div class="project-wash"></div>
-            <div class="project-top"><span>01 / AI product</span><span>Live</span></div>
-            <div class="project-copy">
-              <h3>RigMaster<span>AI</span></h3>
-              <p>An intelligent PC configurator that reasons through component compatibility and system balance.</p>
-              <div class="tags"><span>AI APIs</span><span>JavaScript</span><span>Vercel</span></div>
-            </div>
-            <a class="card-link" href="https://rigmaster-ai.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open RigMasterAI live site"></a>
-          </article>
-
-          <article class="project-card graphic-card lars-card tilt-card" role="listitem" data-cursor="OPEN">
-            <div class="lars-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="project-top"><span>02 / Full-stack system</span><span>Academic</span></div>
-            <div class="project-copy">
-              <p class="project-code">LAB / ACTIVITY / REPORTING</p>
-              <h3>LARS</h3>
-              <p>A role-based portal for lab submissions, attendance, activity tracking and reporting.</p>
-              <div class="tags"><span>PHP</span><span>MySQL</span><span>RBAC</span></div>
-            </div>
-            <a class="card-link" href="https://github.com/blessen5/LARS" target="_blank" rel="noreferrer" aria-label="View LARS on GitHub"></a>
-          </article>
-
-          <article class="project-card project-image tilt-card" role="listitem" data-cursor="OPEN">
-            <img src="assets/data-pipeline-cover.webp" alt="Sculptural data pipeline in a dark architectural laboratory" loading="lazy">
-            <div class="project-wash"></div>
-            <div class="project-top"><span>03 / Data engineering</span><span>In practice</span></div>
-            <div class="project-copy">
-              <h3>Signal<br>Pipeline</h3>
-              <p>Python and SQL workflows for cleaning, joining, transforming and explaining complex datasets.</p>
-              <div class="tags"><span>Python</span><span>SQL</span><span>Pandas</span></div>
-            </div>
-            <a class="card-link" href="https://github.com/blessen5/job-analysis" target="_blank" rel="noreferrer" aria-label="View data analytics work on GitHub"></a>
-          </article>
-
-          <article class="project-card graphic-card agro-card tilt-card" role="listitem" data-cursor="OPEN">
-            <div class="agro-scan" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="project-top"><span>04 / AI + IoT</span><span>Collaborative</span></div>
-            <div class="project-copy">
-              <p class="project-code">VISION / FIELD / PRECISION</p>
-              <h3>Agro<br>Prescribe</h3>
-              <p>Smartphone-assisted crop diagnosis and prescription mapping for precision pesticide spraying.</p>
-              <div class="tags"><span>TypeScript</span><span>AI</span><span>ESP32</span></div>
-            </div>
-            <a class="card-link" href="https://github.com/blessen5/aipesticide" target="_blank" rel="noreferrer" aria-label="View AgroPrescribe on GitHub"></a>
-          </article>
-        </div>
-        <div class="work-progress" aria-hidden="true"><span></span></div>
-      </div>
-    </section>
-
-    <section id="practice" class="practice section-pad">
-      <div class="section-index reveal"><span>03</span><span>Practice</span></div>
-      <div class="practice-intro reveal">
-        <p class="kicker">The toolkit changes.<br>The thinking stays.</p>
-        <h2>Built across the stack.</h2>
-      </div>
-      <div class="capability-list">
-        <article class="capability-row reveal">
-          <span>01</span><h3>Software systems</h3><p>Java · C · C++ · PHP · JavaScript</p><b>↗</b>
-        </article>
-        <article class="capability-row reveal">
-          <span>02</span><h3>Data & databases</h3><p>Python · Pandas · PostgreSQL · MySQL · Oracle</p><b>↗</b>
-        </article>
-        <article class="capability-row reveal">
-          <span>03</span><h3>Cloud foundations</h3><p>Linux · Docker · Bash · Git · deployment</p><b>↗</b>
-        </article>
-      </div>
-
-      <div class="story-grid">
-        <div class="story-copy reveal">
-          <p class="mono-label">Education</p>
-          <h3>Learning with depth, building with range.</h3>
-        </div>
-        <div class="timeline">
-          <article class="reveal"><time>Current</time><div><h4>MSc Computer Science</h4><p>Rajagiri College of Social Sciences</p></div></article>
-          <article class="reveal"><time>Graduate</time><div><h4>BSc Computer Science</h4><p>SSV College · Mahatma Gandhi University</p></div></article>
-        </div>
-      </div>
-
-      <div class="credentials reveal">
-        <p class="mono-label">Selected credentials</p>
-        <div class="credential-cloud">
-          <span>AI Essentials — Coursera</span>
-          <span>SQL & Relational Databases 101 — IBM</span>
-          <span>Generative AI for Project Managers — PMI</span>
-          <span>Word Processing & Data Entry — KELTRON</span>
+        <div class="skill-list reveal">
+          <article><h3>Software systems</h3><p>Java · C · C++ · PHP · JavaScript · HTML5 · CSS3</p></article>
+          <article><h3>Data & databases</h3><p>Python · Pandas · PostgreSQL · MySQL · Oracle SQL · ETL</p></article>
+          <article><h3>Cloud foundations</h3><p>Linux · Docker · Bash · Git · GitHub · deployment</p></article>
+          <article><h3>Engineering foundations</h3><p>Data structures · Algorithms · DBMS · Networks · Operating systems · REST APIs</p></article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="contact-bg parallax-layer" data-speed="0.07" aria-hidden="true"></div>
-      <div class="contact-content">
-        <p class="eyebrow reveal">Available for software, data and cloud opportunities</p>
-        <h2 class="split-text">Let’s build something<br><em>worth remembering.</em></h2>
-        <a class="email-link magnetic" href="mailto:blessenpshaju@gmail.com">blessenpshaju@gmail.com <span>↗</span></a>
-        <div class="contact-links">
-          <a href="https://github.com/blessen5" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
-          <a href="https://www.linkedin.com/in/blessen-p-shaju" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-          <span>Kerala, India</span>
+    <section class="panel education-panel" id="education" aria-labelledby="education-title">
+      <div class="panel-inner education-grid">
+        <div>
+          <p class="eyebrow reveal">Academic journey</p>
+          <h2 class="outline-title reveal" id="education-title">Learning with depth.</h2>
+          <p class="lede reveal">Computer science foundations strengthened through postgraduate study, practical systems work and public presentation.</p>
+        </div>
+        <div class="timeline reveal">
+          <article><span>Currently pursuing · Postgraduate degree</span><h3>MSc Computer Science</h3><h4>Rajagiri College of Social Sciences, Kerala</h4><p>Software systems, algorithmic problem solving, database management, cloud infrastructure and data analytics.</p></article>
+          <article><span>Graduate · Undergraduate degree</span><h3>BSc Computer Science</h3><h4>SSV College, Valayanchirangara · Mahatma Gandhi University</h4><p>Programming foundations, relational database design, computer networks and operating systems.</p></article>
+        </div>
+        <figure class="achievement-photo reveal"><img src="/assets/blessen-award.webp" alt="Blessen receiving a certificate on stage" loading="lazy"><figcaption><b>Achievement in action</b><span>Presenting ideas, learning in public and building professional confidence.</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="panel credentials-panel" id="credentials" aria-labelledby="credentials-title">
+      <div class="panel-inner">
+        <header class="section-head"><div><p class="eyebrow reveal">Verified learning</p><h2 class="outline-title reveal" id="credentials-title">Credentials.</h2></div><p class="credential-intro reveal">Artificial intelligence, relational databases, project delivery and data processing.</p></header>
+        <div class="credential-grid">
+          <article class="credential-card reveal"><p>Coursera · Online certification</p><h3>AI Essentials</h3><span>Generative AI · Prompt engineering · AI ethics · Productivity</span><b>Verified credential</b></article>
+          <article class="credential-card reveal"><p>Cognitive Class / IBM · Aug 2024</p><h3>SQL and Relational Databases 101</h3><span>Relational schema · SQL queries · Table joins · Normalization</span><b>Verified credential</b></article>
+          <article class="credential-card reveal"><p>Project Management Institute</p><h3>Generative AI Overview for Project Managers</h3><span>Project lifecycle · GenAI workflows · Risk analysis · Strategy</span><b>Completed</b></article>
+          <article class="credential-card reveal"><p>KELTRON · Technical qualification</p><h3>Word Processing and Data Entry</h3><span>Data processing · Office automation · Documentation · Validation</span><b>Verified credential</b></article>
         </div>
       </div>
-      <footer><span>© 2026 Blessen P Shaju</span><span>Designed with intention, built by hand.</span><a href="#hero">Back to top ↑</a></footer>
+    </section>
+
+    <section class="panel contact" id="contact" aria-labelledby="contact-title">
+      <div class="panel-inner contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow reveal">Have a role, project or idea?</p>
+          <h2 class="outline-title reveal" id="contact-title">Let’s talk.</h2>
+          <p class="lede reveal">Send a direct message. It opens in your email app, ready to send.</p>
+          <div class="contact-links reveal"><a href="mailto:blessenpshaju@gmail.com">blessenpshaju@gmail.com</a><a href="https://github.com/blessen5" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/blessen-p-shaju" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+        </div>
+        <form class="message-form reveal">
+          <label>Name<input name="name" autocomplete="name" required placeholder="Your name"></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+          <label>Subject<input name="subject" required placeholder="What would you like to discuss?"></label>
+          <label>Message<textarea name="message" rows="4" required placeholder="Tell Blessen a little about the opportunity…"></textarea></label>
+          <button type="submit">Prepare message <span>↗</span></button><p class="form-status" role="status"></p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <button class="chat-launch magnetic" type="button" aria-expanded="false" aria-controls="chat-panel">
-    <span class="chat-pulse"></span><b>Ask B.</b><i>+</i>
-  </button>
+  <button class="chat-launch" type="button" aria-expanded="false" aria-controls="chat-panel"><span></span><b>Ask B.</b><i>+</i></button>
   <section id="chat-panel" class="chat-panel" aria-label="Portfolio assistant" aria-hidden="true">
-    <div class="chat-head"><div><span></span><p>Portfolio assistant<small>Local · no account needed</small></p></div><button type="button" aria-label="Close chat">×</button></div>
-    <div class="chat-log" aria-live="polite">
-      <div class="message bot">Hi — I can give you the quick version of Blessen’s work, skills, education or contact details.</div>
-    </div>
-    <div class="chat-suggestions">
-      <button type="button">Best project?</button><button type="button">Core skills?</button><button type="button">Contact</button>
-    </div>
-    <form class="chat-form"><label class="sr-only" for="chat-input">Ask about Blessen</label><input id="chat-input" autocomplete="off" placeholder="Ask about Blessen…"><button aria-label="Send question">↗</button></form>
+    <header><div><i></i><p>Portfolio assistant<small>Local · no account needed</small></p></div><button type="button" aria-label="Close chat">×</button></header>
+    <div class="chat-log" aria-live="polite"><div class="message bot">Hi — ask me about Blessen’s projects, skills, education or availability.</div></div>
+    <div class="chat-suggestions"><button>Best project?</button><button>Core skills?</button><button>Contact</button></div>
+    <form class="chat-form"><label class="sr-only" for="chat-input">Ask about Blessen</label><input id="chat-input" autocomplete="off" placeholder="Ask about Blessen…"><button aria-label="Send">↗</button></form>
   </section>
-
   <script src="/assets/script.js" defer></script>
 </body>
 </html>
