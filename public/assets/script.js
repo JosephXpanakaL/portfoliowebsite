@@ -2,115 +2,164 @@
   const $ = (s, root = document) => root.querySelector(s);
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const deck = $('.panel-deck');
+  const panels = $$('.panel');
+  let activeIndex = 0;
+  let wheelLocked = false;
 
-  const menuBtn = $('.menu-button');
-  const menu = $('.menu-overlay');
-  const toggleMenu = (force) => {
-    const open = force ?? !menu.classList.contains('open');
-    menu.classList.toggle('open', open);
-    menu.setAttribute('aria-hidden', String(!open));
-    menuBtn.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('menu-open', open);
+  addEventListener('load', () => setTimeout(() => document.body.classList.add('loaded'), reduced ? 50 : 350));
+
+  const updateActive = index => {
+    activeIndex = Math.max(0, Math.min(panels.length - 1, index));
+    $$('.side-rail a').forEach(a => a.classList.toggle('active', a.dataset.panel === panels[activeIndex].id));
   };
-  menuBtn.addEventListener('click', () => toggleMenu());
-  $$('.menu-overlay a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
-  addEventListener('keydown', e => { if (e.key === 'Escape') { toggleMenu(false); closeChat(); } });
+  const goTo = (target, smooth = true) => {
+    const index = typeof target === 'number' ? target : panels.findIndex(p => p.id === target);
+    if (index < 0) return;
+    updateActive(index);
+    panels[index].scrollIntoView({ behavior: reduced || !smooth ? 'auto' : 'smooth', block: 'start' });
+  };
+  $$('[data-panel]').forEach(link => link.addEventListener('click', e => {
+    e.preventDefault();
+    goTo(link.dataset.panel);
+    closeMenu();
+  }));
 
+  deck.addEventListener('wheel', e => {
+    if (e.ctrlKey || Math.abs(e.deltaY) < 16 || e.target.closest('.project-grid,.chat-log,.message-form')) return;
+    e.preventDefault();
+    if (wheelLocked) return;
+    wheelLocked = true;
+    goTo(activeIndex + (e.deltaY > 0 ? 1 : -1));
+    setTimeout(() => { wheelLocked = false; }, reduced ? 150 : 750);
+  }, { passive: false });
+  addEventListener('keydown', e => {
+    if (/INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;
+    if (['ArrowDown','PageDown'].includes(e.key)) { e.preventDefault(); goTo(activeIndex + 1); }
+    if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); goTo(activeIndex - 1); }
+    if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+    if (e.key === 'End') { e.preventDefault(); goTo(panels.length - 1); }
+  });
+
+  const panelObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) updateActive(panels.indexOf(entry.target));
+  }), { root: deck, threshold: .62 });
+  panels.forEach(panel => panelObserver.observe(panel));
   const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
-  }), { threshold: .14 });
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  }), { root: deck, threshold: .16 });
   $$('.reveal').forEach(el => revealObserver.observe(el));
 
-  const splitObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (!entry.isIntersecting || entry.target.dataset.split) return;
-    entry.target.dataset.split = 'true';
-    const nodes = [...entry.target.childNodes];
-    nodes.forEach(node => {
-      if (node.nodeType !== Node.TEXT_NODE || !node.textContent.trim()) return;
-      const frag = document.createDocumentFragment();
-      node.textContent.split(/(\s+)/).forEach((word, i) => {
-        if (!word.trim()) return frag.append(word);
-        const span = document.createElement('span');
-        span.textContent = word;
-        span.style.transitionDelay = `${i * 34}ms`;
-        frag.append(span, ' ');
-      });
-      node.replaceWith(frag);
-    });
-    requestAnimationFrame(() => entry.target.classList.add('split-visible'));
-    splitObserver.unobserve(entry.target);
-  }), { threshold: .25 });
-  $$('.split-text').forEach(el => { el.style.setProperty('--split-ready', 1); splitObserver.observe(el); });
+  const menu = $('.menu-overlay');
+  const menuButton = $('.menu-button');
+  function closeMenu() {
+    menu.classList.remove('open');
+    menu.setAttribute('aria-hidden', 'true');
+    menuButton.setAttribute('aria-expanded', 'false');
+  }
+  menuButton.addEventListener('click', () => {
+    const open = !menu.classList.contains('open');
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    menuButton.setAttribute('aria-expanded', String(open));
+  });
 
-  const work = $('.work-section');
-  const track = $('.project-track');
-  const progress = $('.work-progress span');
-  const updateScroll = () => {
-    const y = scrollY;
-    if (!reduced) $$('.parallax-layer').forEach(el => {
-      const section = el.closest('section');
-      const rect = section.getBoundingClientRect();
-      if (rect.bottom > 0 && rect.top < innerHeight) el.style.transform = `translate3d(0,${rect.top * Number(el.dataset.speed || .1)}px,0) scale(1.08)`;
+  if (matchMedia('(pointer:fine)').matches && !reduced) {
+    const dot = $('.cursor-dot');
+    const ring = $('.cursor-ring');
+    let x = innerWidth / 2, y = innerHeight / 2, rx = x, ry = y;
+    addEventListener('mousemove', e => {
+      x = e.clientX; y = e.clientY;
+      dot.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-50%)`;
     });
-    if (innerWidth > 900) {
-      const start = work.offsetTop;
-      const available = work.offsetHeight - innerHeight;
-      const p = Math.min(1, Math.max(0, (y - start) / available));
-      const maxX = Math.max(0, track.scrollWidth - (innerWidth - innerWidth * .32));
-      track.style.transform = `translate3d(${-p * maxX}px,0,0)`;
-      progress.style.width = `${p * 100}%`;
-    }
-  };
-  addEventListener('scroll', updateScroll, { passive: true });
-  addEventListener('resize', updateScroll); updateScroll();
-
-  if (!reduced && matchMedia('(pointer:fine)').matches) {
-    const dot = $('.cursor-dot'), ring = $('.cursor-ring');
-    let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
-    addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; dot.style.transform=`translate3d(${mx}px,${my}px,0) translate(-50%,-50%)`; });
-    const loop = () => { rx += (mx-rx)*.14; ry += (my-ry)*.14; ring.style.transform=`translate3d(${rx}px,${ry}px,0) translate(-50%,-50%)`; requestAnimationFrame(loop); }; loop();
-    $$('[data-cursor],a,button').forEach(el => {
-      el.addEventListener('mouseenter', () => { ring.classList.add('active'); $('span', ring).textContent = el.dataset.cursor || ''; });
+    const animateCursor = () => {
+      rx += (x - rx) * .18; ry += (y - ry) * .18;
+      ring.style.transform = `translate3d(${rx}px,${ry}px,0) translate(-50%,-50%)`;
+      requestAnimationFrame(animateCursor);
+    };
+    animateCursor();
+    $$('a,button,input,textarea').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('active'));
       el.addEventListener('mouseleave', () => ring.classList.remove('active'));
-    });
-    $$('.magnetic').forEach(el => {
-      el.addEventListener('mousemove', e => { const r=el.getBoundingClientRect(); el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.12}px)`; });
-      el.addEventListener('mouseleave', () => el.style.transform='');
-    });
-    $$('.tilt-card').forEach(card => {
-      card.addEventListener('mousemove', e => { const r=card.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; card.style.transform=`perspective(1400px) rotateY(${x*2.6}deg) rotateX(${-y*2.2}deg)`; });
-      card.addEventListener('mouseleave', () => card.style.transform='');
     });
   }
 
-  let audioCtx, master, nodes = [];
-  const soundBtn = $('.sound-toggle');
-  const stopSound = () => {
-    nodes.forEach(n => { try { n.stop(); } catch {} }); nodes=[];
-    if (master) master.gain.exponentialRampToValueAtTime(.0001, audioCtx.currentTime + .8);
-    soundBtn.setAttribute('aria-pressed','false'); $('.sound-label',soundBtn).textContent='Sound off';
+  let audioContext, gain, oscillators = [];
+  const sound = $('.sound-toggle');
+  const stopAudio = () => {
+    oscillators.forEach(node => { try { node.stop(); } catch {} });
+    oscillators = [];
+    if (gain && audioContext) gain.gain.exponentialRampToValueAtTime(.0001, audioContext.currentTime + .5);
+    sound.setAttribute('aria-pressed', 'false');
+    $('.sound-label', sound).textContent = 'Sound off';
   };
-  const startSound = async () => {
-    audioCtx ||= new (window.AudioContext || window.webkitAudioContext)(); await audioCtx.resume();
-    master = audioCtx.createGain(); master.gain.setValueAtTime(.0001,audioCtx.currentTime); master.gain.exponentialRampToValueAtTime(.028,audioCtx.currentTime+1.4); master.connect(audioCtx.destination);
-    [55,82.41,110].forEach((freq,i)=>{ const o=audioCtx.createOscillator(),g=audioCtx.createGain(),f=audioCtx.createBiquadFilter(); o.type=i===1?'triangle':'sine';o.frequency.value=freq;g.gain.value=.16/(i+1);f.type='lowpass';f.frequency.value=420;o.connect(f).connect(g).connect(master);o.start();nodes.push(o); });
-    soundBtn.setAttribute('aria-pressed','true'); $('.sound-label',soundBtn).textContent='Sound on';
-  };
-  soundBtn.addEventListener('click', () => soundBtn.getAttribute('aria-pressed')==='true' ? stopSound() : startSound());
+  sound.addEventListener('click', async () => {
+    if (sound.getAttribute('aria-pressed') === 'true') return stopAudio();
+    audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
+    await audioContext.resume();
+    gain = audioContext.createGain();
+    gain.gain.setValueAtTime(.0001, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(.022, audioContext.currentTime + 1);
+    gain.connect(audioContext.destination);
+    [55, 82.4, 110].forEach((frequency, i) => {
+      const oscillator = audioContext.createOscillator();
+      const level = audioContext.createGain();
+      oscillator.type = i === 1 ? 'triangle' : 'sine';
+      oscillator.frequency.value = frequency;
+      level.gain.value = .12 / (i + 1);
+      oscillator.connect(level).connect(gain);
+      oscillator.start();
+      oscillators.push(oscillator);
+    });
+    sound.setAttribute('aria-pressed', 'true');
+    $('.sound-label', sound).textContent = 'Sound on';
+  });
 
-  const chatLaunch = $('.chat-launch'), chatPanel = $('.chat-panel'), chatClose = $('.chat-head button'), chatForm = $('.chat-form'), chatInput = $('#chat-input'), chatLog = $('.chat-log');
-  const toggleChat = (force) => { const open=force ?? !chatPanel.classList.contains('open'); chatPanel.classList.toggle('open',open); chatPanel.setAttribute('aria-hidden',String(!open)); chatLaunch.setAttribute('aria-expanded',String(open)); document.body.classList.toggle('chat-open',open && innerWidth<560); if(open) setTimeout(()=>chatInput.focus(),350); };
-  function closeChat(){ toggleChat(false); }
-  const responses = [
-    {keys:['best','project','work','built','portfolio'],text:'Start with RigMasterAI for product thinking, LARS for full-stack fundamentals, and AgroPrescribe for collaborative AI + IoT work. The Selected Work section links directly to each project.'},
-    {keys:['skill','stack','technology','language','know'],text:'Blessen works with Python, Java, C/C++, PHP and JavaScript; PostgreSQL, MySQL and Oracle; plus Linux, Docker, Bash and Git.'},
-    {keys:['education','study','college','degree','msc'],text:'He is pursuing an MSc in Computer Science at Rajagiri College of Social Sciences after completing a BSc in Computer Science under Mahatma Gandhi University.'},
-    {keys:['contact','email','hire','reach','available'],text:'He is open to early-career software, data and cloud opportunities. Email blessenpshaju@gmail.com or use the LinkedIn link in the contact section.'},
-    {keys:['data','sql','analytics','python'],text:'His data practice covers relational modelling, SQL, Python/Pandas cleaning and transformation, multi-table analysis and reporting pipelines.'},
-    {keys:['cloud','docker','linux','devops'],text:'His systems toolkit includes Linux administration, Docker-based environments, Bash scripting, Git workflows and cloud deployment fundamentals.'}
+  $('.message-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const subject = encodeURIComponent(data.get('subject'));
+    const body = encodeURIComponent(`Hi Blessen,\n\n${data.get('message')}\n\nFrom: ${data.get('name')} (${data.get('email')})`);
+    $('.form-status').textContent = 'Opening your email app with the message prepared…';
+    location.href = `mailto:blessenpshaju@gmail.com?subject=${subject}&body=${body}`;
+  });
+
+  const chatLaunch = $('.chat-launch');
+  const chatPanel = $('.chat-panel');
+  const chatInput = $('#chat-input');
+  const chatLog = $('.chat-log');
+  const toggleChat = force => {
+    const open = force ?? !chatPanel.classList.contains('open');
+    chatPanel.classList.toggle('open', open);
+    chatPanel.setAttribute('aria-hidden', String(!open));
+    chatLaunch.setAttribute('aria-expanded', String(open));
+    if (open) setTimeout(() => chatInput.focus(), 250);
+  };
+  const answers = [
+    { keys: ['best','project','work','built'], text: 'Start with RigMasterAI for product thinking, LARS for full-stack fundamentals, and AgroPrescribe for collaborative AI + IoT work.' },
+    { keys: ['skill','stack','technology','language'], text: 'Blessen works with Python, Java, C/C++, PHP and JavaScript; PostgreSQL, MySQL and Oracle; plus Linux, Docker, Bash and Git.' },
+    { keys: ['education','study','college','degree'], text: 'He is pursuing an MSc in Computer Science at Rajagiri College of Social Sciences after completing a BSc in Computer Science.' },
+    { keys: ['contact','email','hire','available'], text: 'Blessen is open to software, data and cloud opportunities. Use the direct-message form or email blessenpshaju@gmail.com.' }
   ];
-  const answer = q => { const words=q.toLowerCase().split(/\W+/); let best={score:0,text:''}; responses.forEach(r=>{ const score=r.keys.reduce((n,k)=>n+(words.some(w=>w.includes(k)||k.includes(w))?1:0),0); if(score>best.score)best={score,text:r.text}; }); return best.score?best.text:'I can help with Blessen’s projects, skills, education, data work, cloud experience or contact details. Try one of those topics.'; };
-  const addMessage = (text,type) => { const div=document.createElement('div');div.className=`message ${type}`;div.textContent=text;chatLog.append(div);chatLog.scrollTop=chatLog.scrollHeight; };
-  const submitChat = q => { if(!q.trim())return;addMessage(q,'user');chatInput.value='';setTimeout(()=>addMessage(answer(q),'bot'),380); };
-  chatLaunch.addEventListener('click',()=>toggleChat());chatClose.addEventListener('click',closeChat);chatForm.addEventListener('submit',e=>{e.preventDefault();submitChat(chatInput.value)});$$('.chat-suggestions button').forEach(b=>b.addEventListener('click',()=>submitChat(b.textContent)));
+  const addMessage = (text, type) => {
+    const node = document.createElement('div');
+    node.className = `message ${type}`;
+    node.textContent = text;
+    chatLog.append(node);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  };
+  const ask = question => {
+    const text = question.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    chatInput.value = '';
+    const words = text.toLowerCase().split(/\W+/);
+    const match = answers.find(item => item.keys.some(key => words.some(word => word.includes(key) || key.includes(word))));
+    setTimeout(() => addMessage(match?.text || 'Ask me about Blessen’s projects, skills, education or availability.', 'bot'), 300);
+  };
+  chatLaunch.addEventListener('click', () => toggleChat());
+  $('.chat-panel header button').addEventListener('click', () => toggleChat(false));
+  $('.chat-form').addEventListener('submit', e => { e.preventDefault(); ask(chatInput.value); });
+  $$('.chat-suggestions button').forEach(button => button.addEventListener('click', () => ask(button.textContent)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); toggleChat(false); } });
 })();
